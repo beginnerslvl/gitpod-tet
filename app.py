@@ -62,10 +62,10 @@ def delete_user(user_id):
     global users
     user = next((u for u in users if u["id"] == user_id), None)
     if not user:
-        return jsonify({"error": "User not found lol"}), 404
+        return jsonify({"error": "User not found"}), 404
     
     users = [u for u in users if u["id"] != user_id]
-    return jsonify({"messssdage": "User dceletded lol"}), 200
+    return jsonify({"message": "User deleted"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
